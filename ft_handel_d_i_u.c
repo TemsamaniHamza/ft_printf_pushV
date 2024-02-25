@@ -12,23 +12,16 @@ int ft_handlenum(const char *str, int i, va_list arg)
 		count += ft_putnbr_long(va_arg(arg, unsigned long));
 	return (count);
 }
-int	ft_putnbr(int n)
+int	ft_putnbr_egh(int n)
 {
 	long	nbr;
-	char	c[20];
+	char	c[10];
 	int		i;
 	int		j;
-	int		x;
 
 	nbr = n;
 	i = 0;
-	x = 9;
-	if (nbr < 0)
-	{
-		x++;
-		write(1, "-", 1);
-		nbr = nbr * -1;
-	}
+
 	while (nbr > 9)
 	{
 		c[i] = (nbr % 10) + '0';
@@ -37,14 +30,36 @@ int	ft_putnbr(int n)
 	}
 	c[i] = nbr + '0';
 	j = i + 1;
-	if (x == 10)
-		j++;
+
 	while (i >= 0)
 	{
 		write(1, &c[i], 1);
 		i--;
 	}
 	return (j);
+}
+
+int ft_putnbr(int n)
+{
+	int j;
+	long nbr;
+
+	j = 0;
+	nbr = n;
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return (11);
+	}
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		nbr *= -1;
+		j++;
+	}
+	j += ft_putnbr_egh(nbr);
+	return(j);
+	
 }
 
 int	ft_putnbr_long(unsigned int n)

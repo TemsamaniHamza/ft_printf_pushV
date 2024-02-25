@@ -1,9 +1,8 @@
 #include "ft_printf.h"
 
-int main(){
-
-    int j = ft_printf(" %d ", -10);
-    int d = printf(" %d ", -10);
-    printf(" j is %d and d is %d", j , d);
-    return(0);
+int main()
+{
+    int j = ft_printf("%d\n", -215);
+    // int d = printf("%d\n", -12312312215);
+    // printf("j is : %d && d is ", j);
 }
