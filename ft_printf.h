@@ -14,10 +14,10 @@ int	ft_putchar(char c);
 int	ft_print(char *str);
 int	ft_handelc(const char *str, int i, va_list arg);
 int	ft_handel_hexa(const char *str, int i, va_list arg);
-int	ft_checkdecimal(unsigned int n);
-int	ft_checkdecimal_caps(unsigned int n);
+int	ft_checkdecimal(unsigned long n);
+int	ft_checkdecimal_caps(unsigned long n);
 int	ft_handlerall(const char *str, int i,   va_list arg);
 int	ft_printf(const char *str, ...);
-
+int ft_checkadresse(unsigned long n);
 
 #endif
